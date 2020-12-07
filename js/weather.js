@@ -1,6 +1,7 @@
 function gettingJSON(){
     //Display the forecast
     // Your code here.
+    var key = "1cde239d077984d60aee33de101961a9"
     var forecast = document.querySelector("#forecast").style.display = 'block';
 
     //Set default location if one isn't provided
@@ -37,10 +38,10 @@ function gettingJSON(){
     
     if (bool) 
     {
-        var query = "https://api.openweathermap.org/data/2.5/weather?zip="+location+"&units="+format+"&appid=1cde239d077984d60aee33de101961a9";   
+        var query = "https://api.openweathermap.org/data/2.5/weather?zip="+location+"&units="+format+"&appid="+key;   
     }
     else {
-        var query = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&units="+format+"&appid=1cde239d077984d60aee33de101961a9";
+        var query = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&units="+format+"&appid="+key;
     }
     console.log("Query is :" + query);
 
@@ -75,9 +76,6 @@ function gettingJSON(){
         document.querySelecter("#tempImg").alt = condition;
 
         console.log(JSON.stringify(json));
-        
-        
-
 	
     });
 }
